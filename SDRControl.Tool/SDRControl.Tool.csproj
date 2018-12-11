@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ToolCommandName>sdr</ToolCommandName>
+    <PackAsTool>True</PackAsTool>
+    <OutputType>Exe</OutputType>
+    <LangVersion>latest</LangVersion>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+
+    <PackageId>SdrControl.Tool</PackageId>
+
+    <Title>SdrControl.Tool</Title>
+
+    <Authors>Graham Paull, Steven Knox</Authors>
+
+    <Description>Remote Control for SDRSharp</Description>
+
+    <PackageProjectUrl>https://github.com/grahampaull/SDRControl</PackageProjectUrl>
+
+    <VersionPrefix>1.0.0</VersionPrefix>
+    
+    <PackageTags>sdr</PackageTags>
+    
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="2.2.5" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+   <ProjectReference Include="..\SDRControl\SDRControl.csproj" />
+  </ItemGroup>
+
+</Project>

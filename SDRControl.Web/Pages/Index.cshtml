@@ -1,0 +1,97 @@
+﻿@page
+@model IndexModel
+@{
+ViewData["Title"] = "Home page";
+}
+
+<div>
+    <form method="post">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    
+                    <div class="btn-group d-flex" role="group" aria-label="Basic example">
+                        <button type="submit" class="@Model.PlayButtonStyle w-100" asp-page-handler="TogglePlayer"><i class="@Model.PlayButtonIcon"></i> @Model.PlayButtonText</button>
+                        @foreach (var item in @Model.Presets)
+                        {
+                        <input type="submit" class="btn btn-secondary w-100" value="@item.Name" asp-page-handler="SetPreset"
+                            asp-route-station="@item.Id" />
+                        <br />    
+                        }        
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    Settings
+                                </div>
+                                <div class="card-body" style="height: 700px">
+                                    <label asp-for="CurrentState.DetectorType" class="control-label"></label>
+                                    <select asp-for="CurrentState.DetectorType" class="form-control" asp-items="@Model.DetectorTypes">
+                                    </select>
+                                    <div class="form-group">
+                                        <label class="control-label" for="text">
+                                            Frequency
+                                        </label>
+                                        <input class="form-control" id="text" name="text" type="text" asp-for="CurrentState.Frequency" />
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="control-label" for="text1">
+                                            Gain
+                                        </label>
+                                        <input class="form-control" id="text1" name="text1" type="text" asp-for="CurrentState.AudioGain" />
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="control-label" for="text1">
+                                            FilterBandwidth
+                                        </label>
+                                        <input class="form-control" id="text1" name="text1" type="text" asp-for="CurrentState.FilterBandwidth" />
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="control-label" for="text1">
+                                            SquelchEnabled
+                                        </label>
+                                        <input class="form-control" id="text1" name="text1" type="text" asp-for="CurrentState.SquelchEnabled" />
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="control-label" for="text1">
+                                            SquelchThreshold
+                                        </label>
+                                        <input class="form-control" id="text1" name="text1" type="text" asp-for="CurrentState.SquelchThreshold" />
+                                    </div>
+                                    <div class="form-group ">
+                                        <label class="control-label" for="text1">
+                                                FmStereo
+                                        </label>
+                                        <input class="form-control" id="text1" name="text1" type="text" asp-for="CurrentState.FmStereo" />
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div>
+                                            <input type="submit" value="Submit" class="btn btn-primary "
+                                                asp-page-handler="ManualConfig">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    Logs
+                                </div>
+                                <div class="card-body" style="height: 700px;overflow-y: auto;">
+                                    <p class="card-text" style="white-space: pre-line">@Model.Logs</p>
+                                </div>
+                            </div>
+
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

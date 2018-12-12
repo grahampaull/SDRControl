@@ -1,6 +1,11 @@
 [
     {
         "Command": "Set",
+        "Method": "AudioGain",
+        "Value": 45
+    },
+    {
+        "Command": "Set",
         "Method": "DetectorType",
         "Value": "WFM"
     },
@@ -27,6 +32,6 @@
     {
         "Command": "Set",
         "Method": "Frequency",
-        "Value": 97400000
+        "Value": 96700000
     }
 ]

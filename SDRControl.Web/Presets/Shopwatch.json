@@ -1,32 +1,37 @@
 [
     {
         "Command": "Set",
+        "Method": "AudioGain",
+        "Value": 45
+    },
+    {
+        "Command": "Set",
         "Method": "DetectorType",
-        "Value": "WFM"
+        "Value": "NFM"
     },
     {
         "Command": "Set",
         "Method": "FilterBandwidth",
-        "Value": 200000
+        "Value": 12500
     },
     {
         "Command": "Set",
         "Method": "SquelchEnabled",
-        "Value": false
-    },
-    {
-        "Command": "Set",
-        "Method": "SquelchThreshold",
-        "Value": 30
-    },
-    {
-        "Command": "Set",
-        "Method": "FmStereo",
         "Value": true
     },
     {
         "Command": "Set",
+        "Method": "SquelchThreshold",
+        "Value": 50
+    },
+    {
+        "Command": "Set",
+        "Method": "FmStereo",
+        "Value": false
+    },
+    {
+        "Command": "Set",
         "Method": "Frequency",
-        "Value": 97400000
+        "Value": 453775000
     }
 ]

@@ -32,6 +32,6 @@
     {
         "Command": "Set",
         "Method": "Frequency",
-        "Value": 99700000
+        "Value": 97400000
     }
 ]
